@@ -1,0 +1,73 @@
+#========================================
+# .gitignore
+# Descrição:
+# Criado por: Silvano Moraes de Souza
+#========================================
+
+# -- BACKUP (sagrado — não tocar) --
+BACKUP/
+BACKUP1/
+
+# -- VENV e Ambiente Python --
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# -- Variáveis de Ambiente e Segredos --
+.env
+.env.*
+!.env.example
+secrets.json
+serviceAccount.json
+*_key.json
+
+# -- IDE e Sistema --
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# -- Logs e Temporários --
+*.log
+*.tmp
+*.bak
+*.cache
+tmp/
+temp/
+
+# -- Dados Sensíveis --
+*.db
+*.sqlite
+*.sqlite3
+*.xlsx
+*.csv
+
+# -- Cofre (backup sensível) --
+/Cofre/
+
+# -- Debug --
+api_server.py.debug
+server_error.txt
+server_output.txt
+
+# -- Node (se houver no futuro) --
+node_modules/
+package.json
+package-lock.json
+
+# -- GitHub Actions --
+.github/
+
+# -- Documentos internos --
+importante.md
+PLANO_ACAO.md
+SPEC.md
