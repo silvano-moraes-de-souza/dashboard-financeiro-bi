@@ -21,7 +21,16 @@
 </tr>
 </table>
 
-<sub>The first two figures were measured in the company's production deployment, comparing the monthly close before and after. This repository is the anonymized study version: company names, credentials and data were removed or replaced.</sub>
+<sub>The first two figures were measured in the company's production deployment, comparing the monthly close before and after. This repository is the study version: credentials and real data were removed, and the screenshots below run on synthetic demo data.</sub>
+
+![Finance dashboard running on demo data](docs/screenshot-finance.png)
+
+<details>
+<summary>Sales dashboard</summary>
+
+![Sales dashboard running on demo data](docs/screenshot-sales.png)
+
+</details>
 
 ## The problem
 
@@ -58,6 +67,16 @@ The heavy lifting happens in the database. Three RPC functions (`get_dashboard_c
 
 ## Run it
 
+With synthetic demo data, no ERP needed:
+
+```bash
+pip install -r requirements.txt
+python scripts/db/seed_demo.py          # 2 companies, 24 months, ~6.5k sale lines
+python api/server.py                    # http://localhost:5000, any email logs in (demo auth)
+```
+
+Against the ERP:
+
 ```bash
 pip install -r requirements.txt
 cp .env.example .env                    # database path and ERP tokens
@@ -72,7 +91,7 @@ python api/server.py                    # API + dashboard at http://localhost:50
 api/          Flask API: /api/dados, /api/vendas, /api/mapa, /api/status
 frontend/     SPA: router, auth, Finance, Sales and Admin pages
 scripts/etl/  ERP extraction and sync to Supabase
-scripts/db/   SQLite schema and refresh jobs
+scripts/db/   SQLite schema, refresh jobs and demo data seed
 sql/          Migrations, RPC functions and the security hardening script
 ```
 
