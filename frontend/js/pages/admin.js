@@ -14,7 +14,7 @@ export async function renderAdminPage(appRoot) {
     <div class="container">
       <div class="card">
         <h3><img class="icon section-icon" data-icon="material-symbols:admin-panel-settings" alt=""> Gerenciamento de Usuarios</h3>
-        <p style="color:var(--text-secondary);margin-bottom:20px">Ambiente local — usuario padrao disponivel.</p>
+        <p style="color:var(--text-secondary);margin-bottom:20px">Ambiente local: usuario padrao disponivel.</p>
         <div class="table-wrapper">
           <table class="admin-table">
             <thead>
@@ -61,7 +61,7 @@ function renderUsersTable() {
       <td>${u.nome || '-'}</td>
       <td><span class="role-badge ${u.role}">${u.role}</span></td>
       <td>${dataCriacao}</td>
-      <td><span style="color:var(--text-secondary);font-size:12px">—</span></td>
+      <td><span style="color:var(--text-secondary);font-size:12px">-</span></td>
     `;
     tbody.appendChild(tr);
   });

@@ -145,7 +145,7 @@ function getPageHTML() {
     </div>
   </div>
   <div id="margemMensalCard" style="margin-bottom:16px;display:none">
-    <h3 style="font-size:13px;margin-bottom:8px"><img class="icon section-icon" data-icon="material-symbols:bar-chart" alt=""> <span id="margemMensalTitle">Margem % Mensal — Todos os Clientes</span></h3>
+    <h3 style="font-size:13px;margin-bottom:8px"><img class="icon section-icon" data-icon="material-symbols:bar-chart" alt=""> <span id="margemMensalTitle">Margem % Mensal: Todos os Clientes</span></h3>
     <div class="chart-container" style="height:180px"><canvas id="margemMensalChart"></canvas></div>
   </div>
   <div class="table-wrapper">
@@ -354,7 +354,7 @@ function renderKPIs() {
     <div class="kpi-card custos">
       <div class="kpi-header"><span class="label">Custos Estimados</span><div class="kpi-icon-bg"><img class="icon kpi-icon" data-icon="material-symbols:receipt" alt=""></div></div>
       <span class="value">${fmtMoney.format(k.custo_total || 0)}</span>
-      <span class="trend">Custo Total — ${k.custo_percentual || 0}%</span>
+      <span class="trend">Custo Total: ${k.custo_percentual || 0}%</span>
     </div>
     <div class="kpi-card ticket">
       <div class="kpi-header"><span class="label">Ticket Medio</span><div class="kpi-icon-bg"><img class="icon kpi-icon" data-icon="material-symbols:shopping-bag-outline" alt=""></div></div>
@@ -998,7 +998,7 @@ async function renderMargemMensal() {
       const resp = await fetch('/api/dados?' + params.toString());
       const json = await resp.json();
       dados = json.margem_mensal;
-      title.textContent = `Margem % Mensal — ${selectedRentabilidadeCliente}`;
+      title.textContent = `Margem % Mensal: ${selectedRentabilidadeCliente}`;
     } catch {
       dados = null;
     }

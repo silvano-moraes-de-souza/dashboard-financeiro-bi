@@ -846,7 +846,7 @@ BEGIN
 
     v_media_cx_nota := CASE WHEN v_total_notas > 0 THEN ROUND(v_total_caixas::NUMERIC / v_total_notas, 1) ELSE 0 END;
 
-    -- Q2: Evolucao Mensal Caixas — generate_series(1,12) com FILTER
+    -- Q2: Evolucao Mensal Caixas: generate_series(1,12) com FILTER
     WITH evol AS (
         SELECT mes,
             ROUND(SUM(qtd_caixas::numeric) FILTER (WHERE ano = v_ref_year))::INT AS caixas_atual,

@@ -6,7 +6,7 @@
 
 # -*- coding: utf-8 -*-
 """
-api_server.py — API Flask para o Dashboard Financeiro Dashboard Financeiro BI
+api_server.py: API Flask para o Dashboard Financeiro Dashboard Financeiro BI
 Fornece endpoint JSON com dados da tabela vendas_geral.
 """
 
