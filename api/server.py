@@ -46,7 +46,7 @@ def add_security_headers(resp):
         "default-src 'self'; "
         "script-src 'self' https://cdn.jsdelivr.net https://d3js.org https://unpkg.com https://api.iconify.design; "
         "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
-        "img-src 'self' data: https://api.iconify.design https://i.ibb.co; "
+        "img-src 'self' data: https://api.iconify.design; "
         "connect-src 'self' https://api.iconify.design https://raw.githubusercontent.com; "
         "font-src 'self' data:; "
         "object-src 'none'; "
